@@ -1,0 +1,218 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+  color: #fff;
+}
+
+section,
+div {
+  box-sizing: border-box;
+}
+
+#container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+#container section {
+  width: 45%;
+  border: 1px solid #fff;
+}
+
+#right,
+#left {
+  position: relative;
+  font-family: sans-serif;
+  overflow-y: scroll;
+}
+
+#left {
+  width: 55% !important;
+  padding: 2%;
+  overflow-y: scroll;
+}
+
+#container #right input:not([type="button"], [type="checkbox"], [type="radio"]),
+#container #right textarea,
+#container #right #ibutton,
+#container #right select {
+  width: 180px;
+  box-sizing: border-box;
+}
+
+#elements_table {
+  width: 80%;
+  margin: 0 auto;
+}
+
+#addElementTable tr td {
+  color: #000;
+}
+
+#addElementBG {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  color: #000;
+  display: none;
+  z-index: 1000;
+}
+
+.panelTitle {
+  height: 50px;
+  background: teal;
+  font-size: 20pt;
+  font-weight: bold;
+  padding: 10px;
+  text-transform: capitalize;
+}
+
+#addElementTable {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  max-height: 90%;
+  overflow-y: scroll;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  border-radius: 5px;
+  text-align: center;
+  box-shadow: 0 0 10px #000;
+  z-index: 2000;
+}
+
+#addElementTable tbody tr td:nth-child(odd) {
+  text-align: right;
+}
+
+#addElementTable tbody tr td:last-of-type {
+  text-align: center;
+}
+
+#addElementTable tbody tr,
+#addElementTable tbody tr td {
+  padding: 5px;
+}
+
+#addElementTable input,
+#addElementTable select,
+#addElementTable textarea {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #000;
+}
+/* 
+.toggle {
+  --width: 70px;
+  --height: calc(var(--width) / 3.5);
+
+  position: relative;
+  display: inline-block;
+  width: var(--width);
+  height: var(--height);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
+  border-radius: var(--height);
+  cursor: pointer;
+}
+
+.toggle input {
+  display: none;
+}
+
+.toggle .slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: var(--height);
+  background-color: #ccc;
+  transition: all 0.4s ease-in-out;
+}
+
+.toggle .slider::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: calc(var(--height));
+  height: calc(var(--height));
+  border-radius: calc(var(--height) / 2);
+  background-color: #fff;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
+  transition: all 0.4s ease-in-out;
+}
+
+.toggle input:checked + .slider {
+  background-color: #2196f3;
+}
+
+.toggle input:checked + .slider::before {
+  transform: translateX(calc(var(--width) - var(--height)));
+} */
+
+/* The container */
+.cbContainer {
+  display: block;
+  cursor: pointer;
+  font-size: 16px;
+  user-select: none;
+  color: #fff;
+  font-family: sans-serif;
+}
+
+/* Hide the browser's default checkbox */
+.cbContainer input {
+  display: none;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  display: block;
+  height: 18px;
+  width: 90px;
+  background-color: darkgrey;
+  border-radius: 5px;
+  padding: 2px;
+}
+
+/* On mouse-over, add a grey background color */
+.cbContainer:hover input ~ .checkmark {
+  background-color: lightblue;
+}
+
+/* When the checkbox is checked, add a blue background */
+.cbContainer input:checked ~ .checkmark {
+  background-color: #2196f3;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark::after {
+  content: "Added";
+  display: none;
+  text-align: center;
+}
+
+.checkmark::before {
+  content: "Removed";
+  display: block;
+  text-align: center;
+}
+
+/* Show the checkmark when checked */
+.cbContainer input:checked ~ .checkmark::after {
+  display: block;
+}
+
+.cbContainer input:checked ~ .checkmark::before {
+  display: none;
+}

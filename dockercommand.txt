@@ -1,0 +1,5 @@
+docker run -dt \
+    --name JavaScriptFormCollector \
+    --mount type=bind,source="E:\DockerVolumes\DockerVolume_JavaScriptFormCollector",target=/app \
+    -p 3000:3000 \
+    winterswebs/javascriptformcollector:latest
